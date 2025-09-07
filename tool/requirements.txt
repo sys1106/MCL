@@ -1,0 +1,7 @@
+langchain_community==0.3.7
+langchain_core==0.3.17
+langgraph==0.2.46
+PyYAML==6.0.2
+PyYAML==6.0.2
+Requests==2.32.3
+typing_extensions==4.12.2

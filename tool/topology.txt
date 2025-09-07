@@ -1,0 +1,10 @@
+0───ts-gateway-service_"POST travel"     {"5": {"add": 261, "duplicate": 0, "resolve": 232, "keep": 29, "lastTime": 1733731706972000, "firstTime": 1733731407192000, "resolveTime": 1733731706972000}}
+    1───ts-travel-service_"POST /api/v1/travelservice/trips/left"     {"5": {"add": 261, "duplicate": 0, "resolve": 232, "keep": 29, "lastTime": 1733731706972000, "firstTime": 1733731407192000, "resolveTime": 1733731706972000}}
+        2───ts-seat-service_"POST /api/v1/seatservice/seats/left_tickets"
+            3───ts-config-service_"GET /api/v1/configservice/configs/{configName}"
+            3───ts-order-service_"POST /api/v1/orderservice/order/tickets"
+        2───ts-basic-service_"POST /api/v1/basicservice/basic/travels"     {"5": {"add": 261, "duplicate": 0, "resolve": 232, "keep": 29, "lastTime": 1733731706972000, "firstTime": 1733731407192000, "resolveTime": 1733731706972000}}
+            3───ts-route-service_"POST /api/v1/routeservice/routes/byIds/"
+            3───ts-train-service_"POST /api/v1/trainservice/trains/byNames"     {"5": {"add": 261, "duplicate": 0, "resolve": 232, "keep": 29, "lastTime": 1733731706972000, "firstTime": 1733731407192000, "resolveTime": 1733731706972000}}
+            3───ts-station-service_"POST /api/v1/stationservice/stations/idlist"
+            3───ts-price-service_"POST /api/v1/priceservice/prices/byRouteIdsAndTrainTypes"
