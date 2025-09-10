@@ -5,7 +5,7 @@ import  re
 client = OpenAI(api_key="sk-3a14b8f07b8440389eae950259888a3a", base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
 
 # 读取 Excel 文件
-excel_file_path = 'D:/sjjm1/AIOps/pythonProject/trace_1 .xlsx'  # 替换为你的文件路径
+excel_file_path = 'D:/TLP/MCL/data/data.xlsx'  # 替换为你的文件路径
 df = pd.read_excel(excel_file_path)
 
 # 假设告警数据在第二列，正确答案在第三列
@@ -152,40 +152,3 @@ print(f'top-3:{t_3/l}')
 print(f'top-5:{t_5/l}')
 print(f'MRR:{res/l}')
 print(results)
-# 存储每个告警的正确率
-# results = []
-# list = []
-#
-# for alarm, correct_answer in zip(alarm_data, correct_answers):
-#     correct_count = 0
-#     total_count = 20  # 每个告警测试20次
-#     user_label = []
-#
-#     for _ in range(total_count):
-#         # 发送请求
-#         response = client.chat.completions.create(
-#             model="qwen2.5-72b-instruct",
-#             messages=[
-#                 {"role": "system", "content": "你是一个有用的助手"},
-#                 {"role": "user", "content": f"{background_info} {rules} {alarm}"}
-#             ],
-#             stream=False
-#         )
-#
-#         # 获取模型的响应
-#         model_response = response.choices[0].message.content.strip()
-#         print(model_response,"             1")
-#         # 进行比较并标注
-#         if correct_answer in model_response:
-#             user_label.append(1)
-#         else: user_label.append(0)
-#
-#     correct_count = sum(user_label)
-#     # 计算正确率
-#     accuracy = correct_count / total_count
-#     results.append([user_label,accuracy])
-#     print(results)
-#
-# # 输出结果
-# for alarm, accuracy in results:
-#     print(f"告警: {alarm}, 正确率: {accuracy:.2%}")
